@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Website</title>
+  <style>
+    /* Reset default margin/padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navbar styles */
+    nav {
+      background: #333;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+    }
+
+    nav .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 12px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: #555;
+      border-radius: 5px;
+    }
+
+    /* Mobile menu button */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8em;
+      cursor: pointer;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        background: #333;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s;
+      }
+
+      nav ul.active {
+        left: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Page sections */
+    section {
+      padding: 60px 20px;
+      min-height: 100vh;
+    }
+
+    section:nth-child(even) {
+      background: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">MySite</div>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <ul id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page sections -->
+  <section id="home">
+    <h1>Welcome to MySite</h1>
+    <p>This is the Home page.</p>
+  </section>
+
+  <section id="about">
+    <h1>About Us</h1>
+    <p>This is the About page.</p>
+  </section>
+
+  <section id="services">
+    <h1>Our Services</h1>
+    <p>This is the Services page.</p>
+  </section>
+
+  <section id="portfolio">
+    <h1>Portfolio</h1>
+    <p>This is the Portfolio page.</p>
+  </section>
+
+  <section id="contact">
+    <h1>Contact Us</h1>
+    <p>This is the Contact page.</p>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
